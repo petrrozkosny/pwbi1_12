@@ -1,0 +1,36 @@
+let // klicove slovo uvozujici zacatek prikazu
+
+  
+    #"tabulka zemi" = #table( // promenna typu tabula s deklaraci objektu typu table
+        //nazvy sloupcu jsou datovym typem text
+        {"Zeme","Rok","Prumerny vek"}, // nazvy sloupcu
+        {
+            /*
+            Datove typy hodnot ve sloupcich:
+            "Czechia" = text
+            2017 = cele cislo
+            10578000 = cele cislo
+            "CZK" = text
+            true = boolean
+            */
+            {"Cesko",2017,42.1},
+            {"Cesko",2018,42.1},
+            {"Cesko",2019,42.1},
+
+            {"Slovensko",2017,39.2},
+            {"Slovensko",2018,39.2},
+            {"Slovensko",2019,39.2},
+
+            {"Polsko",2017,41.1},
+            {"Polsko",2018,41.1},
+            {"Polsko",2019,41.1},
+
+            {"Nemecko",2017,45.7},
+            {"Nemecko",2018,45.7},
+            {"Nemecko",2019,45.7}
+
+
+        }
+    )
+in
+    #"tabulka zemi"

@@ -1,0 +1,81 @@
+Do nového souboru
+1. Vložit data.csv
+1.1. Upravit datové typy
+1.2. Nahrát data do Power Pivot
+
+2. Vytvořit tabulku dim datumy (za pomoci funkce CALENDARAUTO)
+2.1. Dopočítat sloupce
+2.1.1. Rok
+2.1.2. Kvartál
+2.1.3. Měsíc
+2.1.4. Den
+2.2. Nad Rok-Kvartál-Měsíc-Den vytvořte hiearchii: datumy
+
+3. Vytvořte tabulku dim lokality (všechny lokality z data[NAME])
+
+4. Vytvořte aktivní relace mezi
+4.1. data - dim datumy
+4.2. data - dim lokality
+
+5. Vytvořte stránku "reportů a na ní vizualizujte
+
+5.1. Tabulka se sloupci
+5.1.1. Dim datumy Rok
+5.1.2. Max TMAX pro daný rok
+5.1.3. Rozdíl mezi max TMAX pro daný rok a max TMAX v předchozím roce (pozn prosím dopočítat sloupec ROK do tabulky data)
+5.1.4 Ve sloupci z bodu 5.1.2. podmíněně vizualizujte nejvyšší hodnotu
+
+5.2. Spojnicový graf
+5.2.1. dim datumy [Rok]
+5.2.2. suma [PRCP] pro daný [Rok]
+5.2.3. suma [PRCP] v předchozí rok
+
+5.3 Sloupcový graf
+5.3.1 dim datumy [Rok]
+5.3.2 max TMAX pro daný [Rok]
+5.3.3 Nad graf nastavte popis, viz níže
+
+5.4 Tabulka
+5.4.1 dim lokality [NAME]
+5.4.2. Max[PRCP]
+5.4.3. Max[PRCP] v max roce
+5.4.4. Max data[DATE] max [PRCP] pro danou dim lokality[NAME]
+
+Vytvořte stránku "popis" a v ní vizualizujte (popis bude nad grafem z bodu 5.3)
+6. Tabulka
+6.1. dim lokality[NAME]
+6.2. max [TMAX]
+
+7. Vytvořte stránku "podrobná analýza", která bude dostupná přes sloupec dim datumy[Rok] a v ní vizualizujte
+7.1. Průřez nad dim lokality[NAME]
+7.2. Tabulka
+7.2.2. dim datumy[Měsíc]
+7.2.3. suma [PRCP]
+
+7.3. Tabulka
+7.3.1. dim datumy[Měsíc]
+7.3.2. kumulativní suma [PRCP] pro lokalitu vybranou v bodu 7.1.
+Pozn. pořád chceme respektovat rok, přes který se sem uživatel dostal
+
+7.4. Podrobnou analýzu zpřístupněte přes tlačítko na stránce "report"
+
+BONUS: 
+8. Vytvořte stránku "analýza" a na ní vizualizujte
+
+8.1. Selektor s hodnotami:
+- predchozi rok
+- vsechny roky
+
+8.2. Spojnicový graf
+8.2.1. dim datumy[Rok]
+8.2.2. max [TMAX]
+8.2.3. Výpočet v závilosti na tom, co si uživatel vybral v selektrou 10.1.:
+	- pokud "predchozi rok", tak max[TMAX] vpredchozim roce
+	- pokud "vsechny roky", tak max[TMAX] za vsechny roky
+
+
+
+
+
+ 
+
